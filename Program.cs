@@ -1,5 +1,5 @@
 ﻿using Npgsql;
-
+/*
 string dbUri = "Host=localhost;Port=5455;Username=postgres;Password=postgres;Database=idcgrupp4";
 
 await using var db = NpgsqlDataSource.Create(dbUri);
@@ -64,3 +64,4 @@ await using (var cmd = db.CreateCommand("ALTER TABLE room ADD CONSTRAINT  fk_roo
 {
     await cmd.ExecuteNonQueryAsync();
 }
+*/

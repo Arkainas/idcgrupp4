@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "loUM0ec69NyN9E15H4ympA2kXSrnpRXcEscIr7urRzcr2HSOEv97rUKlo+00WYq6pfc12xxaw+QL3S2ea6/B8w==",
+  "dgSpecHash": "nBBS00jOAVqlRwhfHXsbG2pIItVWHrkkIUaiUwjm4LSe53Yv+LnESK23AvBJxC7pSPZ6xajigjznn5k+ojaHhQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\kevin\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
