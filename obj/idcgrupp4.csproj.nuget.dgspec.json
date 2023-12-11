@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\idcgrupp4.csproj": {}
+    "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\idcgrupp4.csproj": {
+    "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
+        "projectUniqueName": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
         "projectName": "idcgrupp4",
-        "projectPath": "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kevin\\source\\repos\\idcgrupp4\\obj\\",
+        "projectPath": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
+        "packagesPath": "C:\\Users\\arvid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arvid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
