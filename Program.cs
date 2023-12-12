@@ -1,4 +1,5 @@
 ﻿
+using idcgrupp4;
 using Npgsql;
 using System.Threading.Channels;
 
@@ -23,8 +24,8 @@ while (menu)
     switch (choice)
     {
         case "1":
-            Table table = new Table();
-            table.AddCustomer();
+            Booking booking = new Booking();
+            booking.AddCustomer();
 
             break;
         case "2":
