@@ -56,7 +56,7 @@ await using (var cmd = db.CreateCommand("CREATE TABLE IF NOT EXISTS room (number
     await cmd.ExecuteNonQueryAsync();
 }
 
-await using (var cmd = db.CreateCommand("CREATE TABLE IF NOT EXISTS hotel (name VARCHAR, booking INT references booking(id), number INT references room(number), distance_To_Beach INT, distance_To_Centrum INT, pool BOOL, Entertainment BOOL, Childrens_Club BOOL, Restaurant BOOL)"))
+await using (var cmd = db.CreateCommand("CREATE TABLE IF NOT EXISTS hotel (name VARCHAR, booking INT references booking(id), number INT references room(number), distance_To_Beach INT, distance_To_Centrum INT)"))
 {
     await cmd.ExecuteNonQueryAsync();
 }
