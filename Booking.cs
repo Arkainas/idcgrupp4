@@ -1,4 +1,6 @@
 ﻿using Npgsql;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 namespace idcgrupp4;
 
 public class Booking
@@ -12,16 +14,37 @@ public class Booking
         Console.WriteLine("Write first name: ");
         string firstName = Console.ReadLine();
         Console.WriteLine("Write last name: ");
+        while (Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+        {
+            if (firstName.Length < 3 || firstName.Length > 25)
+            {
+                Console.WriteLine("Minimum 3 letters, maximum 25");
+                firstName = Console.ReadLine();
+            }
+        }
         string lastName = Console.ReadLine();
         Console.WriteLine("Write email: ");
         string email = Console.ReadLine();
+        while (Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+        {
+            if (lastName.Length < 3 || lastName.Length > 25)
+            {
+                Console.WriteLine("Minimum 3 letters, maximum 25");
+                lastName = Console.ReadLine();
+            }
+        }
         Console.WriteLine("Write phone number: ");
         string phoneNumber = Console.ReadLine();
         Console.WriteLine("Write date of birth (YYYY-MM-DD): ");
         DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
-
-
-
+        while (!Regex.IsMatch(phoneNumber, @"^[0-9]+$"))
+        {
+            if (phoneNumber.Length < 7 || phoneNumber.Length > 15)
+            {
+                Console.WriteLine("Please enter the correct format.");
+                phoneNumber = Console.ReadLine();
+            }
+        }
         string insertQuery = @"INSERT INTO customer(name, surname, email, phone_number, date_of_birth) VALUES ($1, $2, $3, $4, $5)";
 
         await using (var cmd = db.CreateCommand(insertQuery))
@@ -35,9 +58,6 @@ public class Booking
             await cmd.ExecuteNonQueryAsync();
         }
     }
-
-
-    
 
 
 
