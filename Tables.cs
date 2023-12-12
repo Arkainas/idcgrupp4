@@ -1,21 +1,19 @@
 ﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 public class Table
 {
-    private readonly NpgsqlConnection _dbConnection;
+    
 
-    public Table(NpgsqlConnection dbConnection)
-    {
-        _dbConnection = dbConnection;
-    }
     public async Task CreateTable()
     {
     string dbUri = "Host=localhost;Port=5455;Username=postgres;Password=postgres;Database=idcgrupp4";
 
     await using var db = NpgsqlDataSource.Create(dbUri);
+        
 
 
 /*
@@ -81,38 +79,37 @@ await using (var cmd = db.CreateCommand("ALTER TABLE room ADD CONSTRAINT  fk_roo
 
 }
 
-    public async Task AddCustomer()
-    { 
-            Console.WriteLine("Write first name: ");
-            string firstName = Console.ReadLine();
-            Console.WriteLine("Write last name: ");
-            string lastName = Console.ReadLine();
-            Console.WriteLine("Write email: ");
-            string email = Console.ReadLine();
-            Console.WriteLine("Write phone number: ");
-            string phoneNumber = Console.ReadLine();
-            Console.WriteLine("Write date of birth (YYYY-MM-DD): ");
-            string dateOfBirth = Console.ReadLine();
 
-        if (!DateTime.TryParse(dateOfBirth, out DateTime dateOfbirth))
-        {
-            Console.WriteLine("Invalid dateformat. Please use YYYY-NN-DD");
-            return;
-        }    
+    public async void AddCustomer()
+    {
+        string dbUri = "Host=localhost;Port=5455;Username=postgres;Password=postgres;Database=idcgrupp4";
 
-            string insertQuery = "INSERT INTO customer(name, surname, email, phone_number, date_of_birth)";
+        await using var db = NpgsqlDataSource.Create(dbUri);
 
-            await using (var cmd = new NpgsqlCommand())
-            {
-                cmd.Parameters.AddWithValue(firstName);
-                cmd.Parameters.AddWithValue(lastName);
-                cmd.Parameters.AddWithValue(email);
-                cmd.Parameters.AddWithValue(phoneNumber);
-                cmd.Parameters.AddWithValue(dateOfBirth);
+        Console.WriteLine("Write first name: ");
+        string firstName = Console.ReadLine();
+        Console.WriteLine("Write last name: ");
+        string lastName = Console.ReadLine();
+        Console.WriteLine("Write email: ");
+        string email = Console.ReadLine();
+        Console.WriteLine("Write phone number: ");
+        string phoneNumber = Console.ReadLine();
+        Console.WriteLine("Write date of birth (YYYY-MM-DD): ");
+        DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
 
-                await cmd.ExecuteNonQueryAsync();
-            }
         
-    }
 
+        string insertQuery = @"INSERT INTO customer(name, surname, email, phone_number, date_of_birth) VALUES ($1, $2, $3, $4, $5)";
+
+        await using (var cmd = db.CreateCommand(insertQuery))
+        {
+            cmd.Parameters.AddWithValue(firstName);
+            cmd.Parameters.AddWithValue(lastName);
+            cmd.Parameters.AddWithValue(email);
+            cmd.Parameters.AddWithValue(phoneNumber);
+            cmd.Parameters.AddWithValue(dateOfBirth);
+
+            await cmd.ExecuteNonQueryAsync();
+        }
+    }
 }
