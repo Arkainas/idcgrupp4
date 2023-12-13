@@ -1,5 +1,4 @@
-﻿
-using idcgrupp4;
+﻿using idcgrupp4;
 using Npgsql;
 using System.Threading.Channels;
 
@@ -47,3 +46,4 @@ while (menu)
     }
 
 }
+

@@ -44,19 +44,13 @@ public class Booking
 
         Console.Clear();
         Console.WriteLine("Write your date of birth (YYYY-MM-DD): ");
-        string dateOfBirth = Console.ReadLine();
-        while (!Regex.IsMatch(dateOfBirth, @"^[0-9, -]+$") || dateOfBirth.Length < 9 || dateOfBirth.Length > 11)
-        {
-            Console.WriteLine("Please enter the correct format.");
-            dateOfBirth = Console.ReadLine();
-        }
+        DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
+
+
+
         Console.WriteLine("Added you as a customer, welcome!");
 
-
-        ////DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
-
-
-        string insertQuery = @"INSERT INTO customer(name, surname, email, phone_number, date_of_birth) VALUES ($1, $2, $3, $4, $5)";
+        string insertQuery = "INSERT INTO customer(name, surname, email, phone_number, date_of_birth) VALUES ($1, $2, $3, $4, $5)";
 
         await using (var cmd = db.CreateCommand(insertQuery))
         {
@@ -68,6 +62,22 @@ public class Booking
 
             await cmd.ExecuteNonQueryAsync();
         }
+
+
+        /*
+        static bool IsValidDateFormat(string input)
+        {
+            // Use regular expression to match the format YYYY-MM-DD
+            string pattern = @"\d{4}-\d{2}-\d{2}$";
+
+            return Regex.IsMatch(input, pattern);
+        }
+        */
+        
+
+
+
+            
     }
 
 
