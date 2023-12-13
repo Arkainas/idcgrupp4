@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("idcgrupp4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c04e140963d9ae520b636d3e345312f12daf4abf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("idcgrupp4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("idcgrupp4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

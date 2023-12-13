@@ -191,19 +191,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arvid\\.nuget\\packages\\": {}
+    "C:\\Users\\hanse\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
+      "projectUniqueName": "C:\\Users\\hanse\\Desktop\\Skola\\C#.NET-GRUND\\VS\\idcgrupp4\\idcgrupp4.csproj",
       "projectName": "idcgrupp4",
-      "projectPath": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\idcgrupp4.csproj",
-      "packagesPath": "C:\\Users\\arvid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arvid\\source\\repos\\idcgrupp4\\obj\\",
+      "projectPath": "C:\\Users\\hanse\\Desktop\\Skola\\C#.NET-GRUND\\VS\\idcgrupp4\\idcgrupp4.csproj",
+      "packagesPath": "C:\\Users\\hanse\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hanse\\Desktop\\Skola\\C#.NET-GRUND\\VS\\idcgrupp4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arvid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hanse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -250,7 +250,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

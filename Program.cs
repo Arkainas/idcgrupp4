@@ -37,6 +37,7 @@ while (menu)
             Console.WriteLine("Alter booking");
             break;
         case "4":
+            Console.Clear();
             Console.WriteLine("Bye :)");
             menu = false;
             break;
